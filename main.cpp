@@ -7,6 +7,9 @@
 #include "mult.h"
 #include "div.h"
 #include "pow.h"
+#include "container.hpp"
+#include "BubbleSort.h"
+#include "VectorContainer.h" 
 #include "listContainer.hpp"
 #include "selectionSort.hpp"
 
@@ -19,6 +22,21 @@ int main() {
     Base* seven = new Op(7);
     Base* four = new Op(4);
     Base* two = new Op(2);
+    
+    Base* mult = new Mult(seven, four);
+    Base* add = new Add(three, mult);
+    Base* minus = new Sub(add, two);
+    VectorContainer* test_container1 = new VectorContainer(); 
+    test_container1->add_element(add);
+    test_container1->add_element(seven);
+    test_container1->add_element(two);
+    test_container1->print();
+    cout << test_container1->size(); 
+    test_container1->set_sort_function(new BubbleSort());
+    test_container1->sort();
+    test_container1->print();
+    cout << test_container1->size();
+    
     ListContainer* test_container = new ListContainer();
     test_container->add_element(three);
     test_container->add_element(seven);
