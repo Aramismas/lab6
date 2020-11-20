@@ -10,13 +10,15 @@ BubbleSort::BubbleSort()
 
 BubbleSort::Sort(Container* container)
 { 	bool swapp = true; 
+	Base* temp; 
+	Base* temp2; 
 	while(swapp)
 	{
 		swapp = false; 
 	   for(int i = 0; i < container->size()-1; i++)
 		{ 
-			Base* temp = container->at(i); 
-			Base* temp2 = containter->at(i +1); 
+			 temp = container->at(i); 
+			 temp2 = containter->at(i + 1); 
 			
 		 	 if(temp->evaluate() > temp2->evaluate() ) 
 			{
@@ -25,8 +27,7 @@ BubbleSort::Sort(Container* container)
 			swapp = true
 		
 			}		
-			delete temp; 
-			delete temp2; 
+			
 				
 		}
  	

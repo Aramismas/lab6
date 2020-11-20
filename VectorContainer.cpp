@@ -24,13 +24,16 @@ virtual void print()
 {
 	for(int i = 0; i < v.size(); i++)
   	   {
-		v[i]->stringify(); 
+		cout << v[i]->stringify() << endl; 
 	   } 
 }
 
 virtual void VectorContainer::sort()
 {	if(sort_function != nullptr)
- 		sort_function->sort(&v); 
+ 	{
+		sort_function->sort(&v);
+		return;  
+	}
 	else 
 	{
 	return; 
@@ -43,8 +46,8 @@ virtual void VectorContainer::swap(int i, int j)
 
 }
 virtual Base*  VectorContainer:: at(int i)
-{
-	return v[i]; 
+{              
+	return *v[i]; 
 }
 
 virtual int size()
