@@ -6,12 +6,14 @@ SET(CMAKE_CXX_STANDARD 11)
 
 ADD_EXECUTABLE(main
   listContainer.cpp
+  selectionSort.cpp
   main.cpp
 )
 
 ADD_EXECUTABLE(test 
    listContainer.cpp
-   unit_test.cpp
+   selectionSort.cpp
+   test.cpp
 )
 
 TARGET_LINK_LIBRARIES(test gtest)
