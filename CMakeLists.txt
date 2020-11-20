@@ -1,17 +1,18 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
-
+ 
 ADD_SUBDIRECTORY(googletest)
 
 SET(CMAKE_CXX_STANDARD 11)
 
 ADD_EXECUTABLE(main
-  listContainer.cpp
+  VectorContainer.cpp 
   main.cpp
 )
-
-ADD_EXECUTABLE(test 
-   listContainer.cpp
-   unit_test.cpp
+ADD_EXECUTABLE(test
+ VectorContainer.cpp
+ BubbleSort.cpp
+ test.cpp
+  
 )
 
 TARGET_LINK_LIBRARIES(test gtest)

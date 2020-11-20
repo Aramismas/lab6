@@ -7,7 +7,10 @@
 #include "mult.h"
 #include "div.h"
 #include "pow.h"
-
+#include "container.hpp"
+#include "BubbleSort.h"
+#include "VectorContainer.h" 
+#include "sort.hpp"
 int main() {
     // This is a very basic main, and being able to correctly execute this main
     // does not constitute a completed lab. Make sure you write unit tests for
@@ -19,7 +22,10 @@ int main() {
     Base* mult = new Mult(seven, four);
     Base* add = new Add(three, mult);
     Base* minus = new Sub(add, two);
-    
+    VectorContainer* test_container = new VectorContainer(); 
+    test_container->add_element(add);
+    test_container->print();  
+    std::cout << test_container->size(); 
     std::cout << minus->stringify() << " = " << minus->evaluate() << std::endl;
     return 0; 
 

@@ -4,15 +4,12 @@
 #include "VectorContainer.h"
 #include "sort.hpp"
 
-class Container
-class VectorContainer
-class Sort
 
-class BubbleSort{ 
+class BubbleSort : public Sort { 
 	
 public: 	
-	BubbleSort(); 
-	virtual void sort( Container* container); 
+	BubbleSort(){};   
+        void sort( Container* container); 
 
 }; 
 #endif
