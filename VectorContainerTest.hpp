@@ -10,7 +10,7 @@
 
 #include "VectorContainer.h" 
 #include "BubbleSort.h" 
-
+#include "selectionSort.hpp" 
 TEST( VecTest, CheckSwap) {
 
    Op* seven = new Op(7); 
