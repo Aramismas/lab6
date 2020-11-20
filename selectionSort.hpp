@@ -4,9 +4,9 @@
 #include "sort.hpp"
 #include "container.hpp"
 
-class ListSort {
+class SelectionSort : public Sort {
     public:
-	ListSort();
+        SelectionSort() {};
         void sort(Container* container);
 };
 

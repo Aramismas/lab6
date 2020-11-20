@@ -1,17 +1,15 @@
 #include "listContainer.hpp" 
 
-void ListContainer::set_sort_function(Sort* sort_function) { 
-    this->sort_function = sort_function;
-}
-
 void ListContainer::add_element(Base* element) {
     listcon.push_back(element);
 }
 
 void ListContainer::print() {
     list<Base*>::iterator it;
+    Base* temp;
     for (it = listcon.begin(); it != listcon.end(); it++) {
- 	cout << it->stringify() << " ";
+        temp = *it;
+ 	cout << temp->stringify() << " ";
     }
     cout << endl;
 }
@@ -36,14 +34,16 @@ void ListContainer::swap(int i, int j) {
        return;
     }
     list<Base*>::iterator it;
+    list<Base*>::iterator it2;
     for (it = listcon.begin(); it != listcon.end(); it++) {
         if (count == min) { 
-	    temp = *it;
+	    it2 = it;
+            temp = *it;
         }
         if (count == max) { 
             temp2 = *it;
-            **it = *temp;
-            *temp = *temp2;
+            *it = temp;
+            *it2 = temp2;
         } 
         count++;          
     }     
@@ -58,7 +58,7 @@ Base* ListContainer::at(int i) {
         }
         count++;
     }
-    return null;
+    return nullptr;
 }  
 
 int ListContainer::size() { 
